@@ -31,7 +31,7 @@ const scheduled = require('./src/scheduledMessages')(client, config, messaging);
 require('./src/httpServer')(config, scheduled);
 
 // イベント登録
-require('./src/events/ready').register(client);
+require('./src/events/ready').register(client, config);
 require('./src/events/voiceState').register(client, config, messaging);
 require('./src/events/messageCreate').register(client, config, messaging);
 require('./src/features/banpick').register(client);

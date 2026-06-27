@@ -12,6 +12,13 @@ const config = {
   // cron（Ubuntu側）から叩くHTTPエンドポイントの合言葉
   cronKey: process.env.CRON_KEY || '',
 
+  // Botのステータス表示（「○○をプレイ中」など）
+  activity: {
+    name: process.env.BOT_ACTIVITY || 'レジェンドオブアストルム',
+    // PLAYING / STREAMING / LISTENING / WATCHING / COMPETING
+    type: process.env.BOT_ACTIVITY_TYPE || 'PLAYING',
+  },
+
   // テキスト/ボイスチャンネル
   channels: {
     main: process.env.CH_MAIN,                       // 本スレ
