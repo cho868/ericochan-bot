@@ -23,17 +23,21 @@ const client = new Client({
   ],
 });
 
+// ランタイム設定（管理画面から変更される対象）を読み込む
+const settings = require('./src/settings');
+settings.load();
+
 // 共通ヘルパー
 const messaging = require('./src/messaging')(client);
-const scheduled = require('./src/scheduledMessages')(client, config, messaging);
+const scheduled = require('./src/scheduledMessages')(client, config, messaging, settings);
 
-// HTTPサーバー（死活監視 / cron受け口）
-require('./src/httpServer')(config, scheduled);
+// HTTPサーバー（死活監視 / cron受け口 / 管理API）
+require('./src/httpServer')(config, scheduled, settings);
 
 // イベント登録
-require('./src/events/ready').register(client, config);
-require('./src/events/voiceState').register(client, config, messaging);
-require('./src/events/messageCreate').register(client, config, messaging);
+require('./src/events/ready').register(client, settings);
+require('./src/events/voiceState').register(client, config, messaging, settings);
+require('./src/events/messageCreate').register(client, config, messaging, settings);
 require('./src/features/banpick').register(client);
 
 // ログイン

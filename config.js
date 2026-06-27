@@ -12,6 +12,11 @@ const config = {
   // cron（Ubuntu側）から叩くHTTPエンドポイントの合言葉
   cronKey: process.env.CRON_KEY || '',
 
+  // 管理API（ポータルの管理画面用）の認証キー。未設定だと /admin は無効
+  adminKey: process.env.ADMIN_KEY || '',
+  // 管理APIをブラウザから直接叩く場合のCORS許可オリジン（サーバー側中継なら不要）
+  adminCorsOrigin: process.env.ADMIN_CORS_ORIGIN || '',
+
   // Botのステータス表示（「○○をプレイ中」など）
   activity: {
     name: process.env.BOT_ACTIVITY || 'レジェンドオブアストルム',

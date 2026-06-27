@@ -5,8 +5,11 @@
 // =============================================================
 const { nowJstStr } = require('../util');
 
-function register(client, cfg, messaging) {
+function register(client, cfg, messaging, settings) {
   client.on('voiceStateUpdate', (oldState, newState) => {
+    // 通話通知がOFFなら何もしない
+    if (!settings.get().features.voiceNotify) return;
+
     // どこにも居なかった人が、どこかのVCに入った
     if ((oldState.channelId === null || oldState.channelId === undefined) && newState.channelId !== undefined) {
       // そのVCの人数が1人（通話を始めた瞬間）
@@ -28,7 +31,7 @@ function register(client, cfg, messaging) {
           newState.member.voice.channel.createInvite({ maxAge: '0' })
             .then(() => messaging.sendMsg(
               cfg.channels.info,
-              `<@&${cfg.roles.vcAnnounce}> クスクス…今宵も喋り場が開演しましたわ…`
+              `<@&${cfg.roles.vcAnnounce}> ${settings.get().messages.vcOpen}`
             ));
         }
       }

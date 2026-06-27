@@ -14,3 +14,6 @@ npm-debug.log*
 
 # Claude Code のローカル設定
 .claude/settings.local.json
+
+# ランタイム設定（インスタンス固有）
+data/settings.json

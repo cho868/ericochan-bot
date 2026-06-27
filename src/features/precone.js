@@ -18,7 +18,7 @@ function lotterylunacri(arr, weight) {
   console.log('lottery error');
 }
 
-function handle(message) {
+function handle(message, messages = {}) {
   const [command, ...args] = message.content.slice('!'.length).split(/\s/);
   const num1 = Number(args[0]);
 
@@ -106,7 +106,7 @@ ${re_args.join('\n')} ` + cordblock);
 
   // 未知のコマンド
   } else {
-    message.channel.send('そのコマンドはないですね… !helpで使えるコマンドが見れますよ');
+    message.channel.send(messages.unknownCommand || 'そのコマンドはないですね… !helpで使えるコマンドが見れますよ');
   }
 }
 
