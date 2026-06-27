@@ -1,0 +1,16 @@
+# 依存パッケージ（npm install で復元するのでGitには上げない）
+node_modules/
+
+# 秘密情報（トークンなど）。絶対にGitに上げないこと！
+.env
+
+# ログ・OS が作る一時ファイル
+*.log
+npm-debug.log*
+.DS_Store
+
+# Glitch 固有ファイル（不要なら無視）
+.data/
+
+# Claude Code のローカル設定
+.claude/settings.local.json

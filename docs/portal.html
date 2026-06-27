@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エリコちゃんbot つかいかた</title>
+<style>
+  :root{
+    --pink:#e84393; --pink-soft:#fff0f6; --ink:#33272a; --line:#f3d6e4; --muted:#7a6a72;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--ink); background:var(--pink-soft); line-height:1.7;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:24px 18px 60px;}
+  header{text-align:center; padding:28px 0 12px;}
+  header h1{margin:0; font-size:1.9rem; color:var(--pink);}
+  header p{margin:6px 0 0; color:var(--muted); font-size:.95rem;}
+  section{
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:18px 20px; margin:18px 0; box-shadow:0 2px 10px rgba(232,67,147,.06);
+  }
+  h2{
+    font-size:1.15rem; margin:0 0 12px; color:var(--pink);
+    border-left:5px solid var(--pink); padding-left:10px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.95rem;}
+  th,td{text-align:left; padding:9px 8px; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{color:var(--muted); font-weight:600; white-space:nowrap;}
+  code{
+    background:var(--pink-soft); color:var(--pink); padding:2px 7px;
+    border-radius:6px; font-size:.92em; white-space:nowrap;
+  }
+  .lead{font-size:.95rem; color:var(--muted); margin:-4px 0 14px;}
+  ul.simple{margin:0; padding-left:1.2em;}
+  ul.simple li{margin:4px 0;}
+  footer{text-align:center; color:var(--muted); font-size:.85rem; margin-top:28px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>🤍 エリコちゃんbot つかいかた</h1>
+    <p>コマンドとできることの早見表だよ。クスクス…</p>
+  </header>
+
+  <section>
+    <h2>コマンド一覧</h2>
+    <p class="lead"><code>!</code> ではじめて入力してね（コイントスだけ全角の <code>！</code>）。</p>
+    <table>
+      <tr><th>コマンド</th><th>できること</th></tr>
+      <tr><td><code>!help</code></td><td>プリコネ用コマンドの説明を表示</td></tr>
+      <tr><td><code>!クリティカル 値</code></td><td>同レベル相手へのクリティカル率を計算＋ソルコンくじで運試し</td></tr>
+      <tr><td><code>!持ち越し 秒数 TL</code></td><td>持ち越し秒数でタイムラインを再計算して表示</td></tr>
+      <tr><td><code>!ばんぴっく</code></td><td>ステージのBAN/PICKをリアクションで順番に進行</td></tr>
+      <tr><td><code>!tabelogembed</code></td><td>「食の倉庫」の説明を表示</td></tr>
+      <tr><td><code>！コイントス</code></td><td>表か裏をランダムに返す（botにメンションでもOK）</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>勝手に反応してくれること</h2>
+    <p class="lead">コマンドを打たなくても、こんな時に動くよ。</p>
+    <table>
+      <tr><th>こんな時</th><th>エリコちゃんの反応</th></tr>
+      <tr><td>「帰宅」と書く</td><td>おかえりリアクション</td></tr>
+      <tr><td>YouTubeのURLを貼る</td><td>❤️ リアクション</td></tr>
+      <tr><td>画像・動画を添付する</td><td>❤️ リアクション</td></tr>
+      <tr><td>食べログのURLを貼る</td><td>地方ごとの「食の倉庫」へ自動仕分け</td></tr>
+      <tr><td>温泉・サウナの記事URLを貼る</td><td>「湯の倉庫」へ自動収集</td></tr>
+      <tr><td>「DOAXVV」「ブレードストレンジャーズ」と書く</td><td>ゲーム紹介を表示</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>自動でやってくれること</h2>
+    <ul class="simple">
+      <li>毎日 22:00 に「クスクス…お目覚めですか？」とごあいさつ</li>
+      <li>総合音声通話が始まったら／終わったらお知らせ</li>
+    </ul>
+  </section>
+
+  <footer>
+    エリコちゃんbot &middot; 不具合や追加の要望は管理者まで
+  </footer>
+
+</div>
+</body>
+</html>

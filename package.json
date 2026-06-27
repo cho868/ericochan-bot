@@ -1,0 +1,17 @@
+{
+  "name": "ericochan-bot",
+  "version": "1.0.0",
+  "description": "Discord bot (旧 Glitch から移行)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16.6.0"
+  },
+  "dependencies": {
+    "discord.js": "^13.17.1",
+    "puppeteer": "^21.11.0",
+    "request": "^2.88.2"
+  }
+}
